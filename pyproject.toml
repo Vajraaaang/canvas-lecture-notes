@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "canvas-lecture-notes"
+version = "0.1.0"
+description = "Capture YuJa captions from Canvas and turn paired PDF worksheets into one-page review sheets."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["playwright>=1.51,<2", "pypdf>=6,<7", "reportlab>=4.2,<5"]
+
+[project.scripts]
+canvas-notes = "canvas_notes.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/canvas_notes"]
